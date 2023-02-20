@@ -14,9 +14,11 @@
 
     <?php if (isset($username)) : ?>
         <p>Давно не заходили, <?= $username ?></p>
-        Выйти
+        <a href="?controller=task">Задачи</a>
+        <hr>
+        <a href="?controller=security&action=logout">Выйти</a>
     <?php else : ?>
-        Войти
+        <a href="?controller=security&action=signin">Войти</a>
     <?php endif; ?>
 </body>
 
