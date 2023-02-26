@@ -11,6 +11,7 @@ if (isset($_GET['action'])) {
         } elseif (isset($_POST['username'], $_POST['password'])) {
             ['username' => $username, 'password' => $password] = $_POST;
 
+            $userProvider = new UserProvider($pdo);
             $user = UserProvider::getByUsernameAndPassword($username, $password);
 
             if (is_null($user)) {
