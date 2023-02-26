@@ -4,10 +4,12 @@ class Task
 {
     private string $description = "";
     private int $isDone = 0;
+    private int $id;
+    private int $user_id;
 
-    public function __construct(string $description)
+    public function __construct()
     {
-        $this->description = $description;
+        $this->user_id = $_SESSION['user']->getId();
     }
 
     public function setDescription(string $description): void
@@ -27,5 +29,14 @@ class Task
     public function setIsDone(int $isDone): void
     {
         $this->isDone = $isDone;
+    }
+
+    public function getUserId(): int
+    {
+        return $this->user_id;
+    }
+    public function getId(): int
+    {
+        return $this->id;
     }
 }
